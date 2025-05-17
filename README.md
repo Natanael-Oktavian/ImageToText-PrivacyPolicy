@@ -17,10 +17,8 @@ No images or text data are uploaded, stored, or transmitted to any server.
 
 ## 3. Permissions Used
 
-- *Camera (optional):* Used only to capture images for text recognition. The camera is not used unless the user explicitly chooses to take a photo.
-- *Storage access (optional):* Used only to select an image file for OCR processing.
-
-These permissions are requested at runtime and are not required to use all parts of the app.
+Camera access: The app may open your device’s camera via system tools when you choose to take a photo. The app does not access the camera directly or store images.
+Image selection: You may optionally select an image from your device for text recognition. The app processes the image locally and does not upload or store it.
 
 ## 4. Third-party Services
 
