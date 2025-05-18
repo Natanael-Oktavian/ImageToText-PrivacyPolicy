@@ -1,1 +1,282 @@
-Welcome to My Website
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natanael Oktavian Suharta | VP of Mobile Engineering</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2a2a72;
+            --secondary-color: #007bff;
+            --accent-color: #00bfa6;
+            --text-color: #333;
+            --light-color: #f8f9fa;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        header {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .profile {
+            margin-bottom: 1.5rem;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            background-color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .name {
+            font-size: 2.5rem;
+            margin: 1rem 0 0.5rem;
+        }
+        
+        .title {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+        
+        main {
+            padding: 3rem 0;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 20px rgba(0,0,0,0.15);
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+        }
+        
+        .passion-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .passion-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            background: var(--light-color);
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+        
+        .passion-item:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+        
+        .passion-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: var(--secondary-color);
+        }
+        
+        .passion-item:hover .passion-icon {
+            color: white;
+        }
+        
+        .links {
+            margin-top: 2rem;
+        }
+        
+        .link-btn {
+            display: inline-flex;
+            align-items: center;
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .link-btn:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+        }
+        
+        .link-icon {
+            margin-right: 0.5rem;
+        }
+        
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-text {
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .passion-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-content {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="profile">
+                    <div class="profile-img">
+                        <img id="profile-photo" src="images/profile.jpg" alt="Natanael Oktavian Suharta" onerror="this.onerror=null; this.src=''; this.style.display='none'; document.getElementById('profile-fallback').style.display='flex';">
+                        <div id="profile-fallback" style="display:none; width:100%; height:100%; align-items:center; justify-content:center;">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                </div>
+                <h1 class="name">Natanael Oktavian Suharta</h1>
+                <h2 class="title">VP of Mobile Engineering at iSeller Commerce</h2>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2 class="section-title">About Me</h2>
+            <p>Welcome to my personal website! I'm passionate about programming, problem solving, making an impact, keep growing, optimizing performance and mentoring high-performing engineering teams.</p>
+            
+            <div class="passion-list">
+                <div class="passion-item">
+                    <i class="fas fa-code passion-icon"></i>
+                    <span>Programming</span>
+                </div>
+                <div class="passion-item">
+                    <i class="fas fa-puzzle-piece passion-icon"></i>
+                    <span>Problem Solving</span>
+                </div>
+                <div class="passion-item">
+                    <i class="fas fa-chart-line passion-icon"></i>
+                    <span>Making an Impact</span>
+                </div>
+                <div class="passion-item">
+                    <i class="fas fa-seedling passion-icon"></i>
+                    <span>Keep Growing</span>
+                </div>
+                <div class="passion-item">
+                    <i class="fas fa-tachometer-alt passion-icon"></i>
+                    <span>Optimizing Performance</span>
+                </div>
+                <div class="passion-item">
+                    <i class="fas fa-users passion-icon"></i>
+                    <span>Mentoring Teams</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2 class="section-title">Connect With Me</h2>
+            <div class="links">
+                <a href="https://www.linkedin.com/in/natanael-oktavian-suharta-24b7784b" class="link-btn" target="_blank">
+                    <i class="fab fa-linkedin link-icon"></i> LinkedIn
+                </a>
+                <a href="https://github.com/Natanael-Oktavian" class="link-btn" target="_blank">
+                    <i class="fab fa-github link-icon"></i> GitHub
+                </a>
+                <a href="#" class="link-btn" target="_blank">
+                    <i class="fab fa-google-play link-icon"></i> Play Store (Coming Soon)
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="footer-text">&copy; 2025 Natanael Oktavian Suharta. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
